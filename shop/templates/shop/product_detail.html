@@ -1,0 +1,14 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}{{ product.name }} - Мій магазин{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <p>Ціна: {{ product.price }} грн.</p>
+    <p>{{ product.description }}</p>
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% endif %}
+    <button onclick="addToCart('{{ product.id }}')">Додати до кошика</button>
+{% endblock %}
+
